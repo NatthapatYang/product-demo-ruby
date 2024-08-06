@@ -1,13 +1,21 @@
-<h1>Products</h1>
+<div class="w-[720px] mx-auto">
+  <div class="flex items-center mb-6">
+    <h1 class="text-2xl text-blue-500">Products</h1>
+    <div class="ml-auto"><%= link_to "New product", new_product_path %></div>
+  </div>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <li>
-      <%= link_to product.name, product %>
-    </li>
-  <% end %>
+  <div>
+    <% @products.each do |product| %>
+      <%= form_with model: Order.new, url: orders_path, method: 'POST' do |f| %>
+        <div class="flex gap-x-4 mb-2 p-2 border border-gray-500 rounded-lg">
+          <h1>name : <%= link_to product.name, product %></h1>
+          <h1>description : <%= product.description%></h1>
+          <h1>price : <%= product.price%></h1>
+          <%= f.hidden_field :product_id, value: product.id %>
+          <%= f.number_field :amount, value: 1, class:"w-20" %>
+          <%= f.submit "Buy" , class: "ml-auto font-medium" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
-
-<br>
-
-<%= link_to "New product", new_product_path %>

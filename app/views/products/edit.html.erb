@@ -1,10 +1,14 @@
-<h1>Editing product</h1>
+<div class="w-[720px] mx-auto">
+  <div>
+    <h1 class="text-2xl mb-2 text-blue-500">Editing product</h1>
+    <%= render "form", product: @product %>
+  </div>
 
-<%= render "form", product: @product %>
+  <div class="border border-gray-500 rounded-lg mt-2 p-2 max-w-max">
+    <%= link_to "Show this product", @product %> 
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this product", @product %> |
-  <%= link_to "Back to products", products_path %>
+  <div class="border border-gray-500 rounded-lg mt-2 p-2 max-w-max">
+    <%= link_to "Back to products list", products_path %>
+  </div>
 </div>

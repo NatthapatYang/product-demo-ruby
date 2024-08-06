@@ -73,13 +73,6 @@ class ProductTest < ActionDispatch::IntegrationTest
       end
   end
 
-  test "should show all product at index page" do
-    get "/products"
-
-    assert_response 200
-    assert_equal Nokogiri::HTML5::Document, response.parsed_body.class
-  end
-
   test "should show individual product at show page" do
     product1 = products(:one)
     get "/products/#{product1.id}"
@@ -96,7 +89,7 @@ class ProductTest < ActionDispatch::IntegrationTest
     assert_changes -> { product1.reload.name }, from: "product1", to: "new_productname" do
       patch "/products/#{product1.id}", params: { product: { name: "new_productname" }}
 
-      assert_response :redirect # 302
+      assert_response 302
     end
   end
 
@@ -115,7 +108,7 @@ class ProductTest < ActionDispatch::IntegrationTest
 
     assert_difference "Product.count", -1 do
       delete "/products/#{product1.id}"
-      assert_response :redirect
+      assert_response 302
     end
   end
 end

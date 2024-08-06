@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :products
+  resources :orders
 
   # new_product_path //POST create
   # edit_product_path(:id) //PATCH update
