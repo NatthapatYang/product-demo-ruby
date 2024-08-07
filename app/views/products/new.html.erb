@@ -1,12 +1,9 @@
-<div class="w-[720px] mx-auto">
+<div class="w-full max-w-[400px] mx-auto">
+  <div class="max-w-max mb-8 underline">
+    <%= link_to "Back", products_path %>
+  </div>
   <div>
-    <h1 class="text-2xl mb-4 text-blue-500">New product</h1>
+    <h1 class="text-2xl font-medium mb-4">New product</h1>
     <%= render "form", product: @product %>
-  </div>
-  <div class="max-w-max p-2 border border-gray-500 mt-2 rounded-lg">
-    <%= link_to "Back to products list", products_path %>
-  </div>
-  <div class="max-w-max p-2 border border-gray-500 mt-2 rounded-lg">
-    <%= link_to "Home page", @product  %>
   </div>
 </div>
