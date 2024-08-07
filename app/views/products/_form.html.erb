@@ -34,5 +34,10 @@
     </div>
   </div>
 
-  <%= form.submit "Create product", class: "ml-auto mt-8 p-2 border border-gray-500 rounded-lg" %>
+  <div class="mt-8 flex justify-between items-center">
+    <div class="max-w-max underline">
+      <%= link_to "Back", products_path %>
+    </div>
+    <%= form.submit "Create product", class: "p-2 border border-gray-500 rounded-md" %>
+  </div>
 <% end %>
