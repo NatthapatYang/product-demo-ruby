@@ -1,16 +1,14 @@
-<div class="w-[720px] mx-auto">
+<div class="w-full max-w-[480px] mx-auto">
   <div>
     <%= render @product %>
   </div>
-  <div class="border border-gray-500 rounded-lg p-2 max-w-max">
-    <%= link_to "Edit this product", edit_product_path(@product) %>
-  </div>
-  <div class="border border-gray-500 rounded-lg p-2 mt-2 max-w-max">
-    <%= link_to "Back to products list", products_path %>
-  </div>
-  <div class="border border-gray-500 rounded-lg p-2 mt-2 max-w-max">
-    <%= button_to "Destroy this product", product_path(@product), method: :delete, data: {  
-      turbo_confirm: "Are you sure?",
-      } %>
+
+  <div class="mt-8 flex justify-between items-center">
+    <div class="max-w-max underline">
+        <%= link_to "Back", products_path %>
+    </div>
+    <div class="flex max-w-max ">
+      <%= button_to "Delete", product_path(@product), method: :delete, data: {  turbo_confirm: "Are you sure?",}, class: "text-red-500" %>
+    </div>
   </div>
 </div>
