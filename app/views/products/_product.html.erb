@@ -1,12 +1,9 @@
-<div class="w-[720px] mx-auto">
-  <div class="text-2xl mb-2 text-blue-500">About <%= product.name %></div>
-  <div>
-    <h1 class="text-xl mb-4">Name: <%= product.name %></h1>
+<div class="w-[480px] mx-auto">
+  <div class="flex justify-between mb-6 items-center">
+    <div class="text-2xl font-medium text-blue-500">About</div>
+    <div><%= link_to "Edit", edit_product_path(@product), class: "max-w-max underline" %></div>
   </div>
-  <div>
-    <h1 class="text-xl mb-4">Price: <%= product.price %></h1>
-  </div>
-  <div>
-    <h1 class="text-xl mb-4">Description: <%= product.description %></h1>
-  </div>
+  <div class="text-base mb-6">Name: <%= product.name %></div>
+  <div class="text-base mb-6">Price: <%= product.price %></div>
+  <div class="text-base mb-6">Description: <%= product.description %></div>
 </div
